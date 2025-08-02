@@ -20,4 +20,57 @@
 You can clone or download the repository:
 
 ```bash
-git clone https://github.com/your-username/NumFormatUX.git
+git clone https://github.com/imatteh/NumFormatUX.git
+
+Or include it directly in your HTML:
+
+```
+<script src="num-format-ux.js"></script>
+```
+
+## ⚙️ Usage
+1. Mark your input fields:
+```
+<input type="text" class="number-input" placeholder="Enter amount" />
+```
+2. Initialize the formatter
+
+```
+document.addEventListener('DOMContentLoaded', function () {
+    NumberFormatter.init('.number-input', 3); // 3 decimal places
+});
+```
+
+3. Clean values before form submission
+ 
+```
+document.querySelector('form').addEventListener('submit', function () {
+    document.querySelectorAll('.number-input').forEach(function (input) {
+        input.value = NumberFormatter.unformat(input.value);
+    });
+});
+```
+
+## 🌐 Browser Compatibility
+
+| Browser | Supported |
+| ------- | --------- |
+| Chrome  | ✅         |
+| Firefox | ✅         |
+| Safari  | ✅         |
+| Edge    | ✅         |
+| Opera   | ✅         |
+
+
+## 🧪 Example
+```
+<form>
+  <input type="text" class="number-input" value="10000.5" />
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  NumberFormatter.init('.number-input', 2);
+</script>
+```
+

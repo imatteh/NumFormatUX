@@ -21,7 +21,7 @@ You can clone or download the repository:
 
 ```bash
 git clone https://github.com/imatteh/NumFormatUX.git
-
+```
 Or include it directly in your HTML:
 
 ```
